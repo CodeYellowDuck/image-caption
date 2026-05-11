@@ -1,0 +1,47 @@
+{
+    "hyperparams": {
+        "image_encoder": {
+            "encode_size": 16,
+            "embed_dim": 768
+        },
+        "transformer": {
+            "d_model": 768,
+            "enc_ff_dim": 3072,
+            "dec_ff_dim": 3072,
+            "enc_n_layers": 3,
+            "dec_n_layers": 6,
+            "enc_n_heads": 12,
+            "dec_n_heads": 12,
+            "dropout": 0.15
+        }
+    },
+    "pathes": {
+        "embedding_path": "/root/autodl-tmp/image_captioning_with_transformers-main/glove",
+        "checkpoint": "/root/autodl-tmp/checkpoint"
+    },
+    "dataloader_parms": {
+        "batch_size": 32,
+        "shuffle": true,
+        "num_workers": 16
+    },
+    "train_parms": {
+        "epochs": 60,
+        "val_interval": 1,
+        "early_stop": 6,
+        "lr_patience": 3,
+        "embedings_finetune": 8,
+        "grad_clip": 1.0,
+        "lambda_c": 1.0
+    },
+    "optim_params": {
+        "encoder_lr": 5e-5,
+        "transformer_lr": 2e-4,
+        "lr_factors": [
+            0.50,
+            0.50
+        ]
+    },
+    "max_len": 52,
+    "min_freq": 3,
+    "seed": 19890511
+}
